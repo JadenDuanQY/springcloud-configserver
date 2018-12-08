@@ -1,0 +1,22 @@
+server:
+  port: 1020
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://10.200.201.105:30592/paasOps/SpringCloudServerConfig    # 配置git仓库的地址
+          search-paths: config                          # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: duan.xuechao                                            # git仓库的账号
+          password: qwer1234                                             # git仓库的密码
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:1010/eureka/
+  instance:
+    hostname:  configserver-jaden-test.qyos.novalocal
+    instance-id: configserver-jaden-test.qyos.novalocal
+    prefer-ip-address: true
+    nonSecurePort: 80
