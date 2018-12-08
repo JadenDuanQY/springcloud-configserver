@@ -7,10 +7,10 @@ spring:
     config:
       server:
         git:
-          uri: http://10.200.201.105:30592/paasOps/SpringCloudServerConfig    # 配置git仓库的地址
+          uri: https://github.com/JadenDuanQY/springcloud-configserverfile.git    # 配置git仓库的地址
           search-paths: config                          # git仓库地址下的相对地址，可以配置多个，用,分割。
-          username: duan.xuechao                                            # git仓库的账号
-          password: qwer1234                                             # git仓库的密码
+          username: JadenDuanQY                                            # git仓库的账号
+          password: dD.123321                                        # git仓库的密码
 eureka:
   client:
     serviceUrl:
