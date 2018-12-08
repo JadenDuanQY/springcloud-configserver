@@ -1,0 +1,22 @@
+server:
+  port: 1020
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/JadenDuanQY/springcloud-configserverfile.git    # 配置git仓库的地址
+          search-paths: config                          # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: JadenDuanQY                                           # git仓库的账号
+          password: dD.123321                                        # git仓库的密码
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1010/eureka/
+#  instance:
+#    hostname:  ${CONFIG_SERVER_HOSTNAME}
+#    instance-id: ${CONFIG_SERVER_HOSTNAME}
+#    prefer-ip-address: true
+#    nonSecurePort: ${CONFIG_SERVER_NONSECUREPORT}
