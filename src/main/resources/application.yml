@@ -1,22 +1,3 @@
-server:
-  port: ${CONFIG_SERVER_PORT}
 spring:
-  application:
-    name: configserver
-  cloud:
-    config:
-      server:
-        git:
-          uri: ${CONFIG_SERVER_GIT_URL}    # 配置git仓库的地址
-          search-paths: ${GIT_SEARCH_PATHS}                          # git仓库地址下的相对地址，可以配置多个，用,分割。
-          username: ${GIT_USERNAME}                                            # git仓库的账号
-          password: ${GIT_PASSWORD}                                        # git仓库的密码
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://${EUREKA_SERVICE}:${EUREKA_PORT}/eureka/
-  instance:
-    hostname:  ${CONFIG_SERVER_HOSTNAME}
-    instance-id: ${CONFIG_SERVER_HOSTNAME}
-    prefer-ip-address: true
-    nonSecurePort: ${CONFIG_SERVER_NONSECUREPORT}
+  profiles:
+    active: dev
